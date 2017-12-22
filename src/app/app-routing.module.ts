@@ -3,21 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: '',
-        redirectTo: '/',
-        pathMatch: 'full'
+        path: 'product',
+        loadChildren: './../product/product.module#ProductModule',
     },
     {
-        path: 'product',
-        loadChildren: 'app/product/product.module#ProductModule'
-    }
+        path: '**',
+        redirectTo: 'product',
+        pathMatch: 'full',
+    },
 ];
+
 @NgModule({
   imports: [
-          RouterModule.forRoot(routes)
+      RouterModule.forRoot(routes),
   ],
   exports: [
-          RouterModule
-  ]
+      RouterModule,
+  ],
 })
+
 export class AppRoutingModule { }

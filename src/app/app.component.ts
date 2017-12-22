@@ -1,29 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-multiplica',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'app';
-
-  constructor(
-    private router: Router
+export class AppComponent {
+  constructor ( public viewContainerRef: ViewContainerRef,
   ) {
-
-  }
-
-  btnHome(): void {
-    this.router.navigateByUrl('home');
-  }
-
-  btnProduct(): void {
-    this.router.navigateByUrl('product');
-  }
-
-  ngOnInit(): void {
-    // any
+    this.viewContainerRef = viewContainerRef;
   }
 }
