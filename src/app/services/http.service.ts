@@ -8,7 +8,7 @@ import { EnviromentsConstants } from '../shared/constants';
 @Injectable()
 export class HttpService {
 
-    enviroment: string = EnviromentsConstants.XML;
+    enviroment: string = EnviromentsConstants.BD;
 
     constructor(private http: Http) {
 
